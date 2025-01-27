@@ -119,7 +119,41 @@ public boolean delete(E item)
         current = current.next;
     }
     return null; // No unique element found
-  }  
+  } 
+
+   public E getMax() 
+  {
+      if(head == null)
+        return null; 
+        
+      Node<E> current = head;
+      E max = current.element;
+      
+      while(current !=null){
+          if(((Comparable<E>) current.element).compareTo(max) > 0){
+              max = current.element;
+          }
+          current = current.next;
+      }
+      return max;
+  }
+  
+  public E getMin()
+  {
+      if(head == null)
+        return null;
+        
+      Node<E> current = head;
+      E min = current.element;
+      
+      while(current != null){
+          if(((Comparable<E>) current.element).compareTo(min) < 0){
+              min = current.element;
+          }
+          current = current.next;
+      }
+      return min;
+  }
  
   public String toString() {
     String result = "[";
